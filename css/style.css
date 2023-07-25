@@ -43,3 +43,14 @@ header{
   margin-right: 25%;
   height: 20%;
 }
+
+.salient{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+img {
+  width: 100%; 
+  height: 100%; 
+}
