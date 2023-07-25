@@ -4,7 +4,7 @@ const filterSalient = document.getElementById('salient')
 const filterTendency = document.getElementById('featured')
 const url = 'https://tenor.googleapis.com/v2/search?q='
 const TRENDING_URL = "https://tenor.googleapis.com/v2/featured?key="
-const limit =50
+const limit =30
 
 
 const featured = async () => {
@@ -30,10 +30,16 @@ window.addEventListener("DOMContentLoaded", featured);
 
 function getGif() {
   search.addEventListener('keydown', async function(event){
-    if (event.keyCode === 13) {
+
+
+    if (event.keyCode) {
       filterSalient.innerHTML = ""
       const word= search.value
       console.log(word);
+
+      if (word === "") {
+        featured()
+      }
 
       const urlSearch= `${url}${word}&key=${apiKey}&limit=${limit}`
 
