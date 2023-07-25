@@ -2,6 +2,7 @@ const apiKey = 'AIzaSyDr-hfn4RaXZzUWBfdp5NtiPxOboacEwl0'
 const search = document.getElementById('search')
 const filterSalient = document.getElementById('salient')
 const filterTendency = document.getElementById('featured')
+const titulo = document.getElementById('titulo')
 const url = 'https://tenor.googleapis.com/v2/search?q='
 const TRENDING_URL = "https://tenor.googleapis.com/v2/featured?key="
 const limit =30
@@ -9,7 +10,7 @@ const limit =30
 
 const featured = async () => {
 let trendingURL = `${TRENDING_URL}${apiKey}&limit=${limit}`
-
+titulo.innerHTML="GIFs destacados"
 await fetch(trendingURL)
   .then(response => response.json())
   .then(data => {
@@ -38,8 +39,11 @@ function getGif() {
       console.log(word);
 
       if (word === "") {
+        titulo.innerHTML="GIFs destacados"
         featured()
       }
+
+      titulo.innerHTML=word
 
       const urlSearch= `${url}${word}&key=${apiKey}&limit=${limit}`
 
