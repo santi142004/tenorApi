@@ -4,7 +4,7 @@ const filterSalient = document.getElementById('salient')
 const filterTendency = document.getElementById('featured')
 const url = 'https://tenor.googleapis.com/v2/search?q='
 const TRENDING_URL = "https://tenor.googleapis.com/v2/featured?key="
-const limit =10
+const limit =50
 
 
 const featured = async () => {
